@@ -2,6 +2,7 @@
 
 The article is about basics of operating with EEPROMs with examples
 
+- **Documentation**: 24LC02B.pdf;
 - **Article**: datasheet_eeprom_b02.md;
 - **Images**: png *(cut from 24LC02B's datasheet)*;
 - **Libraries**: Inc, Src;
