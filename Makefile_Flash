@@ -1,0 +1,2 @@
+flash:
+	openocd -f board/stm32f0discovery.cfg  -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
