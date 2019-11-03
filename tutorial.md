@@ -43,7 +43,7 @@
 
 Из документации же узнаем о распиновке чипа, находим наш корпус (**PDIP**, при подключении обратите внимание на выемку):
 
-![Возможные корпуса](png/Package_Types.png)
+![Возможные корпуса](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Package_Types.png)
 
 Здесь:
 
@@ -69,9 +69,9 @@
 
 В конце мы более тщательно разберем каждую из них, а пока перейдем к тонкостям запросов I2C. Путешествуя по документации, находим необходимые данные устройства, а именно его *код* и *устройство контрольного байта*:
 
-![Код устройства](png/RW.png)
+![Код устройства](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/RW.png)
 
-![Состав контрольного байта](png/Address.png)
+![Состав контрольного байта](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Address.png)
 
 Скорее всего, вас смутило то, что 7 бит поделены на 2 части, из которых коду устройства отведено всего лишь 4. Дело в том, что несколько **EEPROM** можно располагать на одной I2C шине, до 2^3=8 штук, тем самым образуя одну большую память.
 
@@ -83,7 +83,7 @@
 
 Разберемся, наконец, с адресацией внутри одной **EEPROM**.
 
-![W1](png/Byte_Write.png)
+![W1](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Byte_Write.png)
 
 Как видно, за отправкой контрольного байта следует отправка байта адресации. Адресация побайтовая. Память **EEPROM** разбита на страницы, размер которых в байтах можно найти в документации (см: страничный буфер).
 Рассмотрим **EEPROM** 24LC**02**:
@@ -139,7 +139,7 @@
 
 ### Запись одного байта по адресу
 
-![W1](png/Byte_Write.png)
+![W1](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Byte_Write.png)
 
 1. (Если используем защиту записи, WP := 0)
 2. **START**;
@@ -155,7 +155,7 @@
 
 ### Запись N байт по адресу
 
-![WN](png/Page_Write.png)
+![WN](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Page_Write.png)
 
 1. (Если используем защиту записи, WP := 0)
 2. **START**;
@@ -171,7 +171,7 @@
 
 ### Чтение текущего байта
 
-![RC](png/Cur_Read.png)
+![RC](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Cur_Read.png)
 
 1. **START**;
 2. Контрольный байт = «1010» (код устройства) + [x][x][x] (биты адресации между несколькими устройствами) + 1 (Read);
@@ -190,7 +190,7 @@
 
 ### Чтение одного байта по адресу
 
-![R1](png/Byte_Read.png)
+![R1](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/Byte_Read.png)
 
 1. **START**;
 2. Контрольный байт = «1010» (код устройства) + [x][x][x] (биты адресации между несколькими устройствами) + ***0 (Write)***;
@@ -208,7 +208,7 @@
 
 ### Чтение N байт по адресу
 
-![RN](png/NBytes_Read.png)
+![RN](https://github.com/XFireFall/stm32_eeprom_datasheet/blob/master/png/NBytes_Read.png)
 
 1. **START**;
 2. Контрольный байт = «1010» (код устройства) + [x][x][x] (биты адресации между несколькими устройствами) + ***0 (Write)***;
