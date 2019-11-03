@@ -1,6 +1,7 @@
 # stm32_eeprom_datasheet
 
-$$\int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx$$
+$$ \int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx $$
+<math>...x^2</math>
 
 The article is about basics of operating with EEPROMs with examples
 
