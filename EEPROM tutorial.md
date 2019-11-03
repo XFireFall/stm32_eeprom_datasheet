@@ -2,7 +2,7 @@
 
 ## Содержание
 
-1. [EEPROM: Описание и назначение](https://github.com/XFireFall/stm32_eeprom_datasheet/edit/master/EEPROM%20tutorial.md#EEPROM: Описание и назначение)
+1. [EEPROM: Описание и назначение](#description)
 2. [Характеристики EEPROM 24LC02B]()
 3. [Операции над EEPROM: введение]()
 4. [Адресация]()
@@ -12,6 +12,7 @@
 
 ***
 
+<a name="description"/>
 ## EEPROM: Описание и назначение
 
 **Electrically Erasable Programmable Read-Only Memory**
